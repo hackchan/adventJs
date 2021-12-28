@@ -1,6 +1,6 @@
 import contarOvejas from './retosJs/reto01'
-import listGift from './retosJs/reto02'
-
+import listGifts from './retosJs/reto02'
+import isValid from './retosJs/reto03'
 console.log('testing reto #01')
 console.log('****************')
 
@@ -18,6 +18,11 @@ console.log(contarOvejas(ovejas))
 console.log('testing reto #02')
 console.log('****************')
 
-const carta = 'bici coche balón _playstation bici coche peluche'
+const carta = 'bici   _nintendo coche balon _playstation bici coche peluche'
 
-console.log(listGift(carta))
+console.log(listGifts(carta))
+
+const cartaAlterada = '(A)(B)(V)'
+console.log('testing reto #03')
+console.log('****************')
+console.log(isValid(cartaAlterada))
