@@ -1,6 +1,6 @@
 # adventJS solved
 
-## <span style = "color: #0080c8">**01 Contando Ovejas para dormir (facil)**</style>
+## 01 Contando Ovejas para dormir (facil)
 
 Con la emoción de que llega la navidad, nos está costando dormir bastante últimamente.
 Vamos a intentar usar este pequeño truco que nos ayudará a dormir más rápido 🐑.
@@ -9,11 +9,11 @@ Vamos a intentar usar este pequeño truco que nos ayudará a dormir más rápido
 
 ---
 
-## <span style = "color: #0080c8">**02 ¡Ayuda al elfo a listar los regalos! (Facil)**</style>
+## 02 ¡Ayuda al elfo a listar los regalos! (Facil)
 
 ¡Menudo lío 😵! Un elfo está ayudando a Santa Claus. Pensaba que le vendría ya ordenado de cada regalo cuantas unidades debe conseguir... ¡y le ha llegado una carta ✉️! ¡Ayúdale!
 
-> [ver reto](#01-contando-ovejas-para-dormir 'reto 1')
+> [ver reto](#02-ayuda-al-elfo-a-listar-los-regalos 'reto 1')
 
 ---
 
@@ -142,7 +142,7 @@ console.log(ovejasFiltradas)
 Recuerda. Debe contener las dos letras 'a' y 'n' en el nombre.
 No cuentes ovejas que sólo tenga una de las letras, debe tener ambas.
 
-> ### <span style = "color: red">Solucion 👌👌👌</style>
+> ### <span style = "color: red">Solucion reto 01 👌👌👌</style>
 
 ```js
 export default function contarOvejas(ovejas) {
@@ -157,7 +157,7 @@ export default function contarOvejas(ovejas) {
 }
 ```
 
-## 02 ¡Ayuda al elfo a listar los regalos!
+## 02 Ayuda al elfo a listar los regalos
 
 Te ha llegado una carta ✉️ con todos los regalos que debes preparar. El tema es que es una cadena de texto y es muy difícil de leer 😱. ¡Menos mal que han puesto cada regalo separado por espacio! (aunque ten cuidado, porque al ser niños, igual han colado más espacios de la cuenta)
 
@@ -184,22 +184,26 @@ console.log(regalos)
 }
 */
 ```
+
 Ten en cuenta que los tests pueden ser más exhaustivos... 😝 ¡Cuidado con contar espacios vacíos!
 
-> ### <span style = "color: red">Solucion 👌👌👌</style>
+> ### <span style = "color: red">Solucion reto 02 👌👌👌</span>
 
 ```js
 export default function listGifts(letter) {
- // ¡Tú puedes!
- const listGift={}
- letter.trim().split(/\s* /).filter((gift) => {
-  return !gift.startsWith('_')
-}).forEach((item)=> {
-       listGift[item] = listGift[item]?listGift[item]+1:1
-       console.log(item)
-       return item
-})
- return listGift
+  // ¡Tú puedes!
+  const listGift = {}
+  letter
+    .trim()
+    .split(/\s* /)
+    .filter((gift) => {
+      return !gift.startsWith('_')
+    })
+    .forEach((item) => {
+      listGift[item] = listGift[item] ? listGift[item] + 1 : 1
+      console.log(item)
+      return item
+    })
+  return listGift
 }
-
 ```
