@@ -1,13 +1,21 @@
-## adventJS solved
+# adventJS solved
 
-## 01 Contando Ovejas para dormir (facil)
+## <span style = "color: #0080c8">**01 Contando Ovejas para dormir (facil)**</style>
 
 Con la emoción de que llega la navidad, nos está costando dormir bastante últimamente.
 Vamos a intentar usar este pequeño truco que nos ayudará a dormir más rápido 🐑.
 
-## 02 ¡Ayuda al elfo a listar los regalos! (Facil)
+> [ver reto](#01-contando-ovejas-para-dormir 'reto 1')
+
+---
+
+## <span style = "color: #0080c8">**02 ¡Ayuda al elfo a listar los regalos! (Facil)**</style>
 
 ¡Menudo lío 😵! Un elfo está ayudando a Santa Claus. Pensaba que le vendría ya ordenado de cada regalo cuantas unidades debe conseguir... ¡y le ha llegado una carta ✉️! ¡Ayúdale!
+
+> [ver reto](#01-contando-ovejas-para-dormir 'reto 1')
+
+---
 
 ## 03 El Grinch quiere fastidiar la Navidad (Normal)
 
@@ -105,7 +113,7 @@ Un ratón ha visto que en el comedor ha quedado un montón de comida 🥮 y ya e
 
 Hay un glitch!!!!
 
-## 01 Contando Ovejas para dormir (facil)
+## 01 Contando Ovejas para dormir
 
 Considera una lista/array de ovejas. Cada oveja tiene un nombre y un color. Haz una función que devuelva una lista con todas las ovejas que sean de color rojo y que además su nombre contenga tanto las letras n Y a, sin importar el orden, las mayúsculas o espacios.
 
@@ -134,7 +142,7 @@ console.log(ovejasFiltradas)
 Recuerda. Debe contener las dos letras 'a' y 'n' en el nombre.
 No cuentes ovejas que sólo tenga una de las letras, debe tener ambas.
 
-## solucion
+> ### <span style = "color: red">Solucion 👌👌👌</style>
 
 ```js
 export default function contarOvejas(ovejas) {
@@ -147,4 +155,51 @@ export default function contarOvejas(ovejas) {
   })
   return cuentaOvejas
 }
+```
+
+## 02 ¡Ayuda al elfo a listar los regalos!
+
+Te ha llegado una carta ✉️ con todos los regalos que debes preparar. El tema es que es una cadena de texto y es muy difícil de leer 😱. ¡Menos mal que han puesto cada regalo separado por espacio! (aunque ten cuidado, porque al ser niños, igual han colado más espacios de la cuenta)
+
+Encima nos hemos dado cuenta que algunas palabras vienen con un \_ delante de la palabra, por ejemplo \_playstation, que significa que está tachado y no se tiene que contar.
+
+Transforma el texto a un objeto que contenga el nombre de cada regalo y las veces que aparece. Por ejemplo, si tenemos el texto:
+
+```js
+const carta = 'bici coche balón _playstation bici coche peluche'
+```
+
+Al ejecutar el método debería devolver lo siguiente:
+
+```js
+const regalos = listGifts(carta)
+
+console.log(regalos)
+/*
+{
+  bici: 2,
+  coche: 2,
+  balón: 1,
+  peluche: 1
+}
+*/
+```
+Ten en cuenta que los tests pueden ser más exhaustivos... 😝 ¡Cuidado con contar espacios vacíos!
+
+> ### <span style = "color: red">Solucion 👌👌👌</style>
+
+```js
+export default function listGifts(letter) {
+ // ¡Tú puedes!
+ const listGift={}
+ letter.trim().split(/\s* /).filter((gift) => {
+  return !gift.startsWith('_')
+}).forEach((item)=> {
+       listGift[item] = listGift[item]?listGift[item]+1:1
+       console.log(item)
+       return item
+})
+ return listGift
+}
+
 ```
